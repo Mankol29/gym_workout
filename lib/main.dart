@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gym_workout/features/data/workout_data.dart';
 
-import 'features/welcome_page/welcome_page.dart';
+import 'package:gym_workout/features/pages/home_page.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,12 +13,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Flutter Demo',
+    return ChangeNotifierProvider(
+      create: (context) => WorkoutPlan(),
+      child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: const WelcomePage());
+        home: HomePage(),
+      ),
+    );
   }
 }

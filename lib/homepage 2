@@ -1,18 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:gym_workout/features/welcome_page/welcome_page.dart';
-
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+Scaffold(
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -46,21 +32,26 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.all(20.0),
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.07,
-                color: Color.fromARGB(160, 55, 116, 57),
+                color: const Color.fromARGB(160, 55, 116, 57),
                 child: Center(
                   child: Text(
                     'Add or Sellect your own plan for today',
                     style: GoogleFonts.bebasNeue(
-                        textStyle: TextStyle(color: Colors.white),
+                        textStyle: const TextStyle(color: Colors.white),
                         fontSize: 25,
                         fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
             ),
+            Container(
+              color: Colors.white10,
+              height: 200,
+              child: Row(
+                children: const [],
+              ),
+            ),
           ],
         ),
       ),
     );
-  }
-}
